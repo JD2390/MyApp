@@ -1,0 +1,7 @@
+{
+  "name": "TI",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

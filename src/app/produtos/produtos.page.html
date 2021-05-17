@@ -1,4 +1,41 @@
-<ion-header [translucent]="true">
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-icon ion-button name="cart-outline" (click)="seguinte()"></ion-icon>
+    </ion-buttons>
+    <ion-title>Produtos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-card *ngFor="let item of meusProd"  mode="{{plataforma}}">
+    <ion-card-header>
+      <ion-card-subtitle>{{item.subtitle}}</ion-card-subtitle>
+      <ion-card-title>{{item.title}}</ion-card-title>
+    </ion-card-header>
+    
+    <ion-card-content mode="{{plataforma}}">
+      <img slot="start"
+      size="small" id="logo" src="{{item.imagem}}" />           
+      {{item.content}}
+      <ion-label>Valor: R$ {{item.valor}}</ion-label>
+      <ion-item slot="end">
+        <ion-note (click)="showAlerta(item)"><ion-icon name="add-circle-outline"></ion-icon></ion-note>       
+      </ion-item>
+    </ion-card-content>
+    
+  </ion-card>
+  <br>
+  <ion-button mode="{{plataforma}}" color="danger" slot="start" defaultHref="/home">Cancela</ion-button>
+  <ion-button mode="{{plataforma}}" slot="end" type="submit">Proximo</ion-button>
+
+</ion-content>
+
+<!-- <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
       Blank
@@ -28,7 +65,7 @@
       <ion-input type="text" required></ion-input>
     </ion-item>
 
-    <!-- Radio buttons -->
+     Radio buttons
     <ion-radio-group lines="full">
       <ion-list-header>
         <ion-label>Gender</ion-label>
@@ -45,7 +82,7 @@
       </ion-item>
     </ion-radio-group>
 
-    <!-- Checkboxes -->
+    Checkboxes
     <ion-list lines="full">
       <ion-list-header>
         <ion-label>Subjects</ion-label>
@@ -74,4 +111,4 @@
       </ion-col>
     </ion-row>
   </form>
-</ion-content>
+</ion-content> -->

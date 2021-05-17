@@ -15,9 +15,6 @@ export class HomePage {
   editar(){
     this.router.navigate(['/users']);
   }
-  pedido(){
-    this.router.navigate(['/home']);
-  }
   logout(){
     alert("Logout Realizado");
     this.router.navigate(['/login']);

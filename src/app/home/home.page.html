@@ -9,31 +9,23 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content mode="ios">
-  <ion-card mode="ios">
-    <ion-card-header mode="ios"> 
-    <ion-item>
-      <ion-label full (click)="pedido()">Novo Pedido</ion-label>
-      <ion-label slot="end" (click)="historico()">Histórico</ion-label>
-    </ion-item>
-   </ion-card-header>
-    <br>
-    <ion-item>
-      <div style="display: flex; justify-content: space-between;">
-        <img (click)="pedido()" id="seleciona1" slot="start" src="../assets/fast-food.jpg" />
-        <img id="seleciona2" slot="end" src="../assets/fast-food.jpg" />
-      </div>
-    </ion-item>
-    <ion-item>
-      <img id="seleciona1" src="../assets/fast-food.jpg" />
-      <img id="seleciona2" src="../assets/fast-food.jpg" />
-    </ion-item>
-    <ion-item>
-      <img id="seleciona1" src="../assets/fast-food.jpg" />
-      <img id="seleciona2" src="../assets/fast-food.jpg" />
-    </ion-item>
-    <br><br>
-    
+<ion-content>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="tab1">
+        <ion-icon name="newspaper-outline"></ion-icon>
+        <ion-label>Pedidos</ion-label>
+      </ion-tab-button>
 
-  </ion-card>
+      <ion-tab-button tab="tab2">
+        <ion-icon name="calendar"></ion-icon>
+        <ion-label>Histórico</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="about">
+        <ion-icon name="information-circle"></ion-icon>
+        <ion-label>Sobre</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
 </ion-content>

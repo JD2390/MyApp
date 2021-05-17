@@ -1,0 +1,13 @@
+<ion-content>
+  
+  <ion-card *ngFor="let item of meusProd"  mode="{{plataforma}}">
+    <ion-card-header>
+      <ion-card-subtitle>{{item.subtitle}}</ion-card-subtitle>
+      <ion-card-title>{{item.title}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content mode="{{plataforma}}">
+      {{item.content}}
+      <ion-label>Valor: R$ {{item.valor}}</ion-label>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -8,5 +8,52 @@
 </ion-header>
 
 <ion-content>
+  <form novalidate [formGroup]="atualizaForm" (ngSubmit)="salvar()">
 
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Nome</ion-label>
+        <ion-input type="text" formControlName="nome" required></ion-input>
+      </ion-item>
+      <h6 *ngIf="errorNome" class="error"> {{messageNome}}</h6>
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" formControlName="email" required></ion-input>
+      </ion-item>
+      <h6 *ngIf="errorEmail" class="error"> {{messageEmail}}</h6>
+      <ion-item>
+        <ion-label position="floating">Celular</ion-label>
+        <ion-input type="number" formControlName="celular" required></ion-input>
+      </ion-item>
+      <h6 *ngIf="errorCelular" class="error"> {{messageCelular}}</h6>
+      <ion-item>
+        <ion-label position="floating">Cidade</ion-label>
+        <ion-input type="text" formControlName="cidade"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Bairro</ion-label>
+        <ion-input type="text" formControlName="barro"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Endereço</ion-label>
+        <ion-input type="text" formControlName="endereco"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Nº</ion-label>
+        <ion-input type="text" formControlName="numero"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Senha</ion-label>
+        <ion-input type="password" formControlName="novasenha1" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Repita a Senha</ion-label>
+        <ion-input type="password" formControlName="novasenha2" required></ion-input>
+      </ion-item>
+      <h6 *ngIf="errorPassword" class="error"> {{messagePassword}}</h6>
+    </ion-list>
+    <br>
+    <ion-button color="danger" slot="start" (click)="voltar()">Cancela</ion-button>
+    <ion-button slot="end" type="submit" [disabled]="atualizaForm.invalid">Cadastrar</ion-button>
+  </form>
 </ion-content>

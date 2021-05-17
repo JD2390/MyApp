@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-item color="success">
+      <img id="foto" src="../assets/imagem.jpg" (click)="editar()" slot="start" />
+      <ion-label full>Nome</ion-label>
+      <ion-label>Telefone</ion-label>
+      <ion-button mode="ios" color="danger" (click)="logout()" slot="end">Logout</ion-button>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content mode="ios">
+  <ion-card mode="ios">
+    <ion-card-header mode="ios"> 
+    <ion-item>
+      <ion-label full (click)="pedido()">Novo Pedido</ion-label>
+      <ion-label slot="end" (click)="historico()">Histórico</ion-label>
+    </ion-item>
+   </ion-card-header>
+    <br>
+    <ion-item>
+      <div style="display: flex; justify-content: space-between;">
+        <img (click)="pedido()" id="seleciona1" slot="start" src="../assets/fast-food.jpg" />
+        <img id="seleciona2" slot="end" src="../assets/fast-food.jpg" />
+      </div>
+    </ion-item>
+    <ion-item>
+      <img id="seleciona1" src="../assets/fast-food.jpg" />
+      <img id="seleciona2" src="../assets/fast-food.jpg" />
+    </ion-item>
+    <ion-item>
+      <img id="seleciona1" src="../assets/fast-food.jpg" />
+      <img id="seleciona2" src="../assets/fast-food.jpg" />
+    </ion-item>
+    <br><br>
+    
+
+  </ion-card>
+</ion-content>

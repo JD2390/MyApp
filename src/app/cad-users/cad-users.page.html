@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>    
+    <!-- <ion-buttons slot="start">
+      <ion-back-button (click)="voltarLogin()"></ion-back-button>
+    </ion-buttons> -->
+    <ion-title>Cadastro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card-header mode="{{plataforma}}">          
+      <div>
+        <img id="logo" src="imagem" />
+      </div>  
+      <ion-card-title mode="{{plataforma}}">Cadastro de Usuários</ion-card-title> 
+    </ion-card-header>
+    
+    <ion-card-content mode="{{plataforma}}">           
+      <form novalidate [formGroup]="contatoForm" (ngSubmit)="cadastra()">
+        <ion-list>
+          <ion-item>
+            <ion-label position="floating">Nome</ion-label>
+            <ion-input type="text" formControlName="nome" required></ion-input>
+          </ion-item>
+          <h6 *ngIf="errorNome" class="error"> {{messageNome}}</h6>
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input type="email" formControlName="email" required></ion-input>
+          </ion-item>
+          <h6 *ngIf="errorEmail" class="error"> {{messageEmail}}</h6>
+          <ion-item>
+            <ion-label position="floating">Celular</ion-label>
+            <ion-input type="number" formControlName="celular" required></ion-input>
+          </ion-item>
+          <h6 *ngIf="errorCelular" class="error"> {{messageCelular}}</h6>
+          <ion-item>
+            <ion-label position="floating">Senha</ion-label>
+            <ion-input type="password" formControlName="senha" required></ion-input>
+          </ion-item>
+          <h6 *ngIf="errorPassword" class="error"> {{messagePassword}}</h6>
+        </ion-list>
+        <br>
+        <ion-button mode="{{plataforma}}" color="danger" slot="start" (click)="voltarLogin()">Cancela</ion-button>
+        <ion-button mode="{{plataforma}}" slot="end" type="submit" [disabled]="contatoForm.invalid">Cadastrar</ion-button>
+      </form>
+    </ion-card-content>
+
+</ion-content>

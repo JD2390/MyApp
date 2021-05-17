@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large" >Login</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card-header mode="{{plataforma}}">
+    <div>
+      <img id="logo" src="imagem" />
+    </div>     
+  </ion-card-header>
+<!-- mode="{{plataforma}}" -->
+  <ion-card-content>
+    <form padding novalidate [formGroup]="signForm" (ngSubmit)="sign()">
+      <ion-list>
+        <ion-item>
+          <ion-label position="floating">Email/Telefone</ion-label>
+          <ion-input type="text" formControlName="login" clearInput clearOnEdit="false"></ion-input>
+        </ion-item>
+        <h6 *ngIf="errorLogin" class="error"> {{messageEmail}}</h6>
+        <ion-item>
+          <ion-label position="floating">Senha</ion-label>
+          <ion-input type="password" formControlName="senha" clearInput clearOnEdit="false"></ion-input>
+        </ion-item>
+        <h6 *ngIf="errorPassword" class="error"> {{messagePassword}}</h6>
+      </ion-list>
+      <br>
+      <ion-button mode="{{plataforma}}" color="success" type="submit" expand="block">Sign in</ion-button>
+    </form>
+    <br><br>
+    <a (click)="cadastro()">Fazer Cadastro</a>
+  </ion-card-content>
+</ion-content>
